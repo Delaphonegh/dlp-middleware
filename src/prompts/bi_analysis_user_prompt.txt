@@ -1,0 +1,93 @@
+Analyze the following call center data and provide comprehensive business intelligence insights. The data represents customer service interactions and includes call metadata, transcriptions, sentiment analysis, and agent performance metrics.
+
+**COMPANY CONTEXT:**
+Company Name: {company_name}
+Industry: {industry} (if known, otherwise treat as generic)
+Analysis Period: {start_date} to {end_date}
+Total Calls Analyzed: {total_calls}
+
+**TEMPORAL ANALYSIS CONTEXT:**
+When the data spans multiple months or years, you MUST provide:
+- Individual analysis for each month and year in the dataset
+- Comparative analysis between different time periods  
+- Seasonal pattern identification and insights
+- Period-specific performance trends and recommendations
+- Year-over-year comparisons when multiple years are present
+
+**DATA TO ANALYZE:**
+{call_data_json}
+
+**SPECIFIC ANALYSIS REQUIREMENTS:**
+1. **Temporal Analysis**: When data spans multiple periods, analyze each month/year individually and comparatively
+2. **Customer Experience Analysis**: Evaluate customer satisfaction trends, pain points, and emotional journey patterns
+3. **Agent Performance Insights**: Assess agent effectiveness using HEAT model scores and identify coaching opportunities
+4. **Operational Efficiency**: Identify process bottlenecks, optimization opportunities, and cost reduction potential
+5. **Business Intelligence**: Extract strategic insights for decision-making and competitive advantage
+6. **Risk Assessment**: Identify potential customer churn risks, quality issues, and operational threats
+7. **Structured Text Summaries**: Provide clear text-based summaries instead of visualization specifications
+
+**FOCUS AREAS FOR ANALYSIS:**
+- Temporal patterns and multi-period comparisons (when applicable)
+- Overall customer satisfaction trends and sentiment patterns
+- Agent performance distribution and coaching needs
+- Call resolution efficiency and process optimization
+- Customer behavior patterns and business opportunities
+- Operational risks and early warning indicators
+- Cost optimization and revenue protection strategies
+- Seasonal behaviors and recurring patterns
+- Period-specific performance insights and recommendations
+
+**STRUCTURED TEXT OUTPUT REQUIREMENTS:**
+For each insight category, provide structured text summaries including:
+- Clear headings and organized sections with emojis for readability
+- Data points with exact values and context (e.g., "Week 1: 45 calls → Week 2: 67 calls (+49% increase)")
+- Trend indicators using symbols (↗ Increasing, ↘ Declining, → Stable)
+- Key insights in bullet point format
+- Agent names and specific examples from actual data
+
+**OUTPUT FORMAT REQUIRED:**
+Return a comprehensive JSON response following the exact structure specified in the system prompt:
+- Executive summary with key findings and critical alerts
+- Detailed insights by category (customer experience, agent performance, operational efficiency, etc.)
+- Performance metrics and KPIs with benchmarks
+- Structured text summaries for executive and operational dashboards
+- Actionable recommendations with priority levels and timelines
+- Risk alerts and early warning indicators
+- Trend analysis and predictive insights
+- Comparative benchmarks and industry standards
+
+Focus on actionable insights that can immediately improve business operations, customer satisfaction, and operational efficiency. Ensure all recommendations are practical, measurable, and aligned with universal call center best practices.
+
+**CRITICAL REQUIREMENTS:**
+- All outputs must be in valid JSON format
+- Include confidence scores for predictions and insights
+- Provide structured text summaries with clear formatting
+- Ensure recommendations are industry-agnostic but actionable
+- Include both short-term tactical and long-term strategic insights
+
+**QUALITY ASSURANCE EVIDENCE REQUIREMENTS:**
+For every insight, claim, or recommendation, you MUST provide:
+- **Call ID**: Unique identifier for traceability (e.g., "1749659796.3023")
+- **Customer Phone**: Source phone number WITH DATE for complete tracking (e.g., "+233243601313 on June 11, 2025")
+- **Recording URL**: MongoDB public_url for direct listening (e.g., "https://storage.googleapis.com/delaphone-audio-files/companies/c04eec55-1389-4b72-a474-30cff2608f3f/audio_files/q-11112-%2B233243601313-20250611-143053-1749659796.3023.wav")
+- **Date/Time**: Exact timestamp (e.g., "June 11, 2025 at 2:30 PM EST")
+- **Human-Readable Explanation**: Clear description instead of technical jargon
+- **Why Relevant**: Specific reason why this call supports the insight
+
+**MONGODB RECORDING SOURCE:**
+Always use the actual public_url from the MongoDB transcript collection for recording URLs:
+- Format: https://storage.googleapis.com/delaphone-audio-files/companies/[company-id]/audio_files/[filename].wav
+- Contains complete call recording for quality assurance listening
+- Linked to transcript data for comprehensive analysis
+
+**CUSTOMER REFERENCE FORMAT:**
+When referencing customer interactions, ALWAYS include dates:
+- Correct: "Customer +233243601313 with 3 calls on June 11, 2025"
+- Incorrect: "Customer +233243601313 with 3 calls"
+
+This enables quality assurance teams to:
+- Track specific conversations that support insights
+- Listen to actual recordings for verification and coaching
+- Follow up on customer issues with complete context
+- Validate AI analysis accuracy against real recordings
+- Conduct targeted coaching based on real examples with timestamps 

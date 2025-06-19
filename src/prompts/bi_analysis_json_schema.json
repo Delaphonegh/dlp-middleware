@@ -1,0 +1,939 @@
+{
+  "analysis_metadata": {
+    "company_name": "string",
+    "analysis_period": {
+      "start_date": "YYYY-MM-DD",
+      "end_date": "YYYY-MM-DD",
+      "total_days": "number"
+    },
+    "data_summary": {
+      "total_calls_analyzed": "number",
+      "calls_with_transcripts": "number",
+      "average_call_duration": "number",
+      "analysis_confidence": "number (0-100)"
+    },
+    "generated_at": "ISO_timestamp",
+    "references": {
+      "data_sources": [
+        {
+          "source_name": "string - database/table name",
+          "fields_used": ["list of specific columns/fields"],
+          "record_count": "number of records analyzed",
+          "time_range": "data period covered",
+          "quality_notes": "data completeness and reliability"
+        }
+      ]
+    }
+  },
+  
+  "executive_summary": {
+    "overall_health_score": "number (0-100)",
+    "key_findings": ["string array of top 3-5 insights"],
+    "critical_alerts": ["string array of urgent issues"],
+    "business_impact": "string - overall business implications",
+    "references": {
+      "evidence_index": [
+        {
+          "claim": "string - specific claim made",
+          "evidence_type": "data_point/calculation/transcript_analysis",
+          "source_reference": "where evidence can be found",
+          "verification_method": "how to validate this claim",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    },
+    "metric_explanations": {
+      "overall_health_score": {
+        "definition": "clear explanation of what this measures",
+        "calculation_method": "how it's calculated",
+        "business_significance": "why this metric matters",
+        "interpretation_guide": {
+          "excellent_range": "what values indicate excellent performance",
+          "good_range": "what values indicate good performance",
+          "poor_range": "what values indicate poor performance",
+          "benchmark_comparison": "industry standards or internal targets"
+        }
+      }
+    }
+  },
+  
+  "customer_experience": {
+    "satisfaction_score": "number (0-100)",
+    "sentiment_distribution": {
+      "positive": "percentage",
+      "neutral": "percentage", 
+      "negative": "percentage"
+    },
+    "top_pain_points": [
+      {
+        "issue": "string",
+        "frequency": "number",
+        "impact_score": "number (0-100)",
+        "recommendation": "string"
+      }
+    ],
+    "emotional_journey": {
+      "typical_pattern": "string description",
+      "improvement_opportunities": ["string array"]
+    },
+    "visualizations": [
+      {
+        "type": "satisfaction_trend_line",
+        "title": "Customer Satisfaction Over Time",
+        "chart_type": "line_chart",
+        "x_axis": "date",
+        "y_axis": "satisfaction_score",
+        "data_points": [
+          {
+            "date": "string (YYYY-MM-DD)",
+            "value": "number",
+            "agent": "string - agent name"
+          }
+        ],
+        "agent_names_included": ["array of agent names"],
+        "insights": "trend analysis with agent attribution"
+      },
+      {
+        "type": "call_volume_trend_line",
+        "title": "Daily Call Volume Trend",
+        "chart_type": "line_chart",
+        "x_axis": "date",
+        "y_axis": "call_count",
+        "data_points": [
+          {
+            "date": "string (YYYY-MM-DD)",
+            "value": "number",
+            "agent": "string - agent name"
+          }
+        ],
+        "agent_names_included": ["array of agent names"],
+        "insights": "call volume patterns by agent"
+      }
+    ],
+    "references": {
+      "calculation_methods": [
+        {
+          "metric_name": "string",
+          "formula": "exact calculation used",
+          "data_inputs": ["required data fields"],
+          "assumptions": ["any assumptions made"],
+          "validation_query": "SQL or method to verify result"
+        }
+      ],
+      "evidence_index": [
+        {
+          "claim": "string - specific claim made",
+          "evidence_type": "data_point/calculation/transcript_analysis",
+          "source_reference": "where evidence can be found",
+          "verification_method": "how to validate this claim",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    },
+    "metric_explanations": {
+      "satisfaction_score": {
+        "definition": "clear explanation of what this measures",
+        "calculation_method": "how it's calculated",
+        "business_significance": "why this metric matters"
+      },
+      "sentiment_distribution": {
+        "definition": "breakdown of customer emotional states",
+        "calculation_method": "sentiment analysis on transcript data"
+      }
+    }
+  },
+  
+  "agent_performance": {
+    "overall_effectiveness_score": "number (0-100)",
+    "heat_model_breakdown": {
+      "halt_average": "number (0-10)",
+      "empathy_average": "number (0-10)",
+      "apologize_average": "number (0-10)",
+      "take_action_average": "number (0-10)"
+    },
+    "performance_distribution": {
+      "excellent": "count",
+      "good": "count",
+      "fair": "count",
+      "poor": "count"
+    },
+    "coaching_priorities": [
+      {
+        "skill_area": "string",
+        "agents_needing_support": "number",
+        "training_recommendation": "string",
+        "expected_impact": "string"
+      }
+    ],
+    "top_performers": [
+      {
+        "performance_pattern": "string",
+        "success_factors": ["string array"],
+        "replication_strategy": "string"
+      }
+    ],
+    "visualizations": [
+      {
+        "type": "agent_performance_trend_line",
+        "title": "Agent Performance Trend Over Time",
+        "chart_type": "line_chart",
+        "x_axis": "date",
+        "y_axis": "performance_score",
+        "data_points": [
+          {
+            "date": "string (YYYY-MM-DD)",
+            "value": "number",
+            "agent": "string - agent name"
+          }
+        ],
+        "agent_names_included": ["array of agent names"],
+        "insights": "individual agent performance trends"
+      },
+      {
+        "type": "handle_time_trend_line",
+        "title": "Average Handle Time by Agent",
+        "chart_type": "line_chart",
+        "x_axis": "date",
+        "y_axis": "avg_handle_time",
+        "data_points": [
+          {
+            "date": "string (YYYY-MM-DD)",
+            "value": "number",
+            "agent": "string - agent name"
+          }
+        ],
+        "agent_names_included": ["array of agent names"],
+        "insights": "agent efficiency trends"
+      }
+    ],
+    "references": {
+      "calculation_methods": [
+        {
+          "metric_name": "string",
+          "formula": "exact calculation used",
+          "data_inputs": ["required data fields"],
+          "assumptions": ["any assumptions made"],
+          "validation_query": "SQL or method to verify result"
+        }
+      ],
+      "evidence_index": [
+        {
+          "claim": "string - specific claim made",
+          "evidence_type": "data_point/calculation/transcript_analysis",
+          "source_reference": "where evidence can be found",
+          "verification_method": "how to validate this claim",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    },
+    "metric_explanations": {
+      "heat_model_breakdown": {
+        "halt_average": {
+          "definition": "measures listening and communication skills",
+          "calculation_method": "transcript analysis for listening indicators",
+          "business_significance": "impacts customer satisfaction"
+        },
+        "empathy_average": {
+          "definition": "measures emotional connection with customers",
+          "calculation_method": "analysis of empathetic language in transcripts"
+        },
+        "take_action_average": {
+          "definition": "measures proactive problem-solving",
+          "calculation_method": "analysis of action-oriented responses"
+        }
+      }
+    }
+  },
+  
+  "operational_efficiency": {
+    "efficiency_score": "number (0-100)",
+    "key_metrics": {
+      "average_handle_time": "seconds",
+      "first_call_resolution_rate": "percentage",
+      "call_completion_rate": "percentage",
+      "process_efficiency_index": "number (0-100)"
+    },
+    "bottlenecks_identified": [
+      {
+        "process_step": "string",
+        "delay_impact": "seconds",
+        "frequency": "number",
+        "optimization_potential": "string"
+      }
+    ],
+    "automation_opportunities": [
+      {
+        "process": "string",
+        "call_volume": "number",
+        "potential_savings": "percentage",
+        "implementation_effort": "low/medium/high"
+      }
+    ],
+    "staffing_insights": {
+      "peak_hours": ["time ranges"],
+      "optimal_staffing_pattern": "description",
+      "workload_distribution": "analysis"
+    },
+    "visualizations": [
+      {
+        "type": "hourly_call_volume_line",
+        "title": "Hourly Call Volume Trend",
+        "chart_type": "line_chart",
+        "x_axis": "hour",
+        "y_axis": "call_count",
+        "data_points": [
+          {
+            "hour": "string (HH:00)",
+            "value": "number",
+            "agent": "string - agent name"
+          }
+        ],
+        "agent_names_included": ["array of agent names"],
+        "insights": "hourly patterns by agent"
+      },
+      {
+        "type": "resolution_rate_line",
+        "title": "Call Resolution Rate Over Time",
+        "chart_type": "line_chart",
+        "x_axis": "date",
+        "y_axis": "resolution_rate",
+        "data_points": [
+          {
+            "date": "string (YYYY-MM-DD)",
+            "value": "number",
+            "agent": "string - agent name"
+          }
+        ],
+        "agent_names_included": ["array of agent names"],
+        "insights": "resolution effectiveness by agent"
+      }
+    ],
+    "references": {
+      "calculation_methods": [
+        {
+          "metric_name": "string",
+          "formula": "exact calculation used",
+          "data_inputs": ["required data fields"],
+          "assumptions": ["any assumptions made"],
+          "validation_query": "SQL or method to verify result"
+        }
+      ],
+      "evidence_index": [
+        {
+          "claim": "string - specific claim made",
+          "evidence_type": "data_point/calculation/transcript_analysis",
+          "source_reference": "where evidence can be found",
+          "verification_method": "how to validate this claim",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    },
+    "metric_explanations": {
+      "key_metrics": {
+        "average_handle_time": {
+          "definition": "average time spent per call",
+          "calculation_method": "SUM(duration) / COUNT(calls)",
+          "business_significance": "affects staffing needs and customer satisfaction",
+          "benchmark_comparison": "industry average 180 seconds"
+        },
+        "first_call_resolution_rate": {
+          "definition": "percentage of issues resolved in first contact",
+          "calculation_method": "analysis of call outcomes and repeat calls"
+        }
+      }
+    }
+  },
+  
+  "business_intelligence": {
+    "strategic_insights": [
+      {
+        "insight": "string",
+        "business_impact": "high/medium/low",
+        "supporting_evidence": "string",
+        "action_required": "string"
+      }
+    ],
+    "customer_behavior_patterns": [
+      {
+        "pattern": "string",
+        "frequency": "number",
+        "business_implication": "string",
+        "opportunity": "string"
+      }
+    ],
+    "competitive_advantages": [
+      {
+        "strength": "string",
+        "evidence": "string",
+        "leverage_strategy": "string"
+      }
+    ],
+    "revenue_impact_analysis": {
+      "cost_per_call": "number",
+      "efficiency_savings_potential": "number",
+      "customer_retention_impact": "percentage",
+      "revenue_protection_value": "number"
+    },
+    "references": {
+      "calculation_methods": [
+        {
+          "metric_name": "string",
+          "formula": "exact calculation used",
+          "data_inputs": ["required data fields"],
+          "assumptions": ["any assumptions made"],
+          "validation_query": "SQL or method to verify result"
+        }
+      ],
+      "evidence_index": [
+        {
+          "claim": "string - specific claim made",
+          "evidence_type": "data_point/calculation/transcript_analysis",
+          "source_reference": "where evidence can be found",
+          "verification_method": "how to validate this claim",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    },
+    "metric_explanations": {
+      "revenue_impact_analysis": {
+        "cost_per_call": {
+          "definition": "estimated cost of handling each call",
+          "calculation_method": "total operational costs / total calls"
+        }
+      }
+    }
+  },
+  
+  "common_products": {
+    "top_products_mentioned": [
+      {
+        "product_name": "string - actual product/service name",
+        "mention_frequency": "number - times mentioned in transcripts",
+        "call_volume": "number - calls related to this product",
+        "success_rate": "percentage - resolution rate for product-related calls",
+        "customer_sentiment": "positive/neutral/negative",
+        "evidence": {
+          "transcript_excerpts": ["actual quotes from transcripts"],
+          "call_ids": ["specific call identifiers"],
+          "data_source": "transcripts.content analysis",
+          "query_used": "text search and sentiment analysis method"
+        }
+      }
+    ],
+    "product_demand_trends": [
+      {
+        "product": "string",
+        "trend_direction": "increasing/stable/decreasing",
+        "growth_rate": "percentage change",
+        "forecasted_demand": "predicted volume for next period",
+        "evidence": {
+          "historical_data": "time series data points",
+          "calculation_method": "trend analysis formula used"
+        }
+      }
+    ],
+    "product_performance_metrics": {
+      "most_requested_product": {
+        "name": "string",
+        "request_count": "number",
+        "evidence": "data source and validation"
+      },
+      "highest_satisfaction_product": {
+        "name": "string",
+        "satisfaction_score": "number",
+        "evidence": "sentiment analysis data"
+      }
+    },
+    "references": {
+      "evidence_index": [
+        {
+          "claim": "string - specific claim made",
+          "evidence_type": "transcript_analysis",
+          "source_reference": "transcript content search",
+          "verification_method": "keyword frequency count",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    },
+    "metric_explanations": {
+      "mention_frequency": {
+        "definition": "how often product mentioned in conversations",
+        "calculation_method": "keyword search in transcript text",
+        "business_significance": "indicates customer interest and demand"
+      }
+    }
+  },
+  
+  "customer_keywords": {
+    "top_keywords": [
+      {
+        "keyword": "string - actual word/phrase",
+        "frequency": "number - times mentioned",
+        "context": "string - typical usage context",
+        "sentiment_score": "number - average sentiment",
+        "business_relevance": "high/medium/low",
+        "evidence": {
+          "transcript_examples": ["actual quotes containing keyword"],
+          "call_ids": ["specific calls where mentioned"],
+          "sentiment_breakdown": "positive/neutral/negative distribution"
+        }
+      }
+    ],
+    "trending_topics": [
+      {
+        "topic": "string",
+        "growth_rate": "percentage increase in mentions",
+        "current_frequency": "number",
+        "business_impact": "string - what this trend means",
+        "evidence": {
+          "time_series_data": "historical mention frequency",
+          "sample_conversations": ["transcript excerpts"]
+        }
+      }
+    ],
+    "sentiment_by_keyword": {
+      "positive_keywords": ["words associated with positive sentiment"],
+      "negative_keywords": ["words associated with negative sentiment"],
+      "neutral_keywords": ["words with neutral sentiment"]
+    },
+    "common_topics_analysis": {
+      "top_topics": [
+        {
+          "topic": "string - topic name",
+          "total_count": "number - exact occurrences",
+          "frequency_percentage": "percentage of total conversations",
+          "trend": "increasing/stable/decreasing",
+          "sample_conversations": ["call IDs where topic appears"],
+          "average_sentiment": "number - sentiment score for topic",
+          "business_relevance": "high/medium/low"
+        }
+      ],
+      "keyword_frequency_analysis": [
+        {
+          "keyword": "string - exact word/phrase",
+          "count": "number - exact occurrences", 
+          "percentage_of_conversations": "percentage",
+          "contexts": ["typical usage contexts"],
+          "call_ids": ["specific calls containing keyword"],
+          "agent_usage": "how often agents use this keyword",
+          "customer_usage": "how often customers use this keyword"
+        }
+      ],
+      "topic_trends": {
+        "growing_topics": ["topics with increasing mention frequency"],
+        "declining_topics": ["topics with decreasing mention frequency"],
+        "emerging_topics": ["new topics appearing in recent conversations"]
+      }
+    },
+    "references": {
+      "evidence_index": [
+        {
+          "claim": "string - specific claim made",
+          "evidence_type": "transcript_analysis",
+          "source_reference": "keyword analysis in transcripts",
+          "verification_method": "text mining and sentiment analysis",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    },
+    "metric_explanations": {
+      "sentiment_score": {
+        "definition": "average sentiment for keyword mentions",
+        "calculation_method": "sentiment analysis on sentences containing keyword",
+        "business_significance": "indicates customer emotional response to topics"
+      }
+    }
+  },
+  
+  "flagged_conversations": {
+    "total_flagged": "number - total conversations requiring attention",
+    "flag_categories": {
+      "abuse_and_harassment": {
+        "count": "number",
+        "severity_breakdown": {
+          "critical": "number",
+          "high": "number", 
+          "medium": "number"
+        }
+      },
+      "harmful_content": {
+        "count": "number",
+        "types": ["threats", "inappropriate_language", "discriminatory_language"]
+      },
+      "business_critical": {
+        "count": "number",
+        "types": ["major_complaints", "competitive_intelligence", "compliance_issues"]
+      },
+      "quality_issues": {
+        "count": "number",
+        "types": ["poor_service", "agent_performance", "system_issues"]
+      }
+    },
+    "flagged_conversations_details": [
+      {
+        "call_id": "string - unique call identifier",
+        "call_date": "YYYY-MM-DD",
+        "call_time": "HH:MM:SS",
+        "flag_type": "abuse/harmful_content/business_critical/quality_issue",
+        "flag_reason": "specific reason for flagging",
+        "severity_level": "critical/high/medium/low",
+        "agent_name": "string - agent involved",
+        "agent_id": "string - agent identifier",
+        "customer_phone": "string - customer phone number",
+        "conversation_excerpt": "string - relevant portion of transcript",
+        "keywords_detected": ["specific words/phrases that triggered flag"],
+        "recommended_action": "string - what should be done",
+        "escalation_required": "boolean",
+        "compliance_risk": "boolean",
+        "business_impact": "high/medium/low"
+      }
+    ],
+    "flagging_summary": {
+      "total_conversations_reviewed": "number",
+      "flagging_rate": "percentage of conversations flagged",
+      "most_common_flag_type": "string",
+      "agents_with_flagged_calls": [
+        {
+          "agent_name": "string",
+          "agent_id": "string", 
+          "flagged_call_count": "number",
+          "flag_types": ["list of flag types for this agent"],
+          "coaching_priority": "high/medium/low"
+        }
+      ],
+      "time_patterns": {
+        "peak_flagging_hours": ["hours when most flags occur"],
+        "peak_flagging_days": ["days with most flagged conversations"]
+      }
+    },
+    "references": {
+      "detection_methods": [
+        {
+          "method_name": "keyword_detection",
+          "description": "scanning for predefined harmful keywords",
+          "accuracy": "percentage",
+          "keywords_used": ["list of detection keywords"]
+        },
+        {
+          "method_name": "sentiment_analysis",
+          "description": "detecting extreme negative sentiment",
+          "threshold": "sentiment score threshold for flagging"
+        },
+        {
+          "method_name": "pattern_recognition",
+          "description": "identifying conversation patterns indicating issues"
+        }
+      ],
+      "evidence_index": [
+        {
+          "claim": "specific flagging decision",
+          "evidence_type": "transcript_analysis/keyword_detection",
+          "source_reference": "transcript excerpt or detection rule",
+          "verification_method": "manual review recommended",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    },
+    "metric_explanations": {
+      "flagging_rate": {
+        "definition": "percentage of conversations requiring attention",
+        "calculation_method": "flagged_conversations / total_conversations * 100",
+        "business_significance": "indicates conversation quality and compliance risk",
+        "benchmark": "industry standard flagging rate 2-5%"
+      },
+      "severity_levels": {
+        "critical": "immediate attention required, potential legal/safety issues",
+        "high": "urgent attention needed, significant business impact",
+        "medium": "attention needed within 24-48 hours",
+        "low": "review recommended, minor issues"
+      }
+    }
+  },
+  
+  "interesting_facts": {
+    "surprising_patterns": [
+      {
+        "fact": "string - surprising discovery",
+        "significance": "why this is notable or unexpected",
+        "data_evidence": {
+          "supporting_numbers": "specific statistics",
+          "comparison_baseline": "what makes this surprising",
+          "data_source": "where this was discovered",
+          "validation_query": "how to verify this fact"
+        }
+      }
+    ],
+    "notable_correlations": [
+      {
+        "correlation": "string - relationship discovered",
+        "strength": "strong/moderate/weak",
+        "business_implication": "what this means for operations",
+        "evidence": {
+          "correlation_coefficient": "statistical measure",
+          "sample_data": "examples demonstrating correlation",
+          "data_points": "specific numbers supporting correlation"
+        }
+      }
+    ],
+    "unusual_behaviors": [
+      {
+        "behavior": "string - unexpected customer/agent behavior",
+        "frequency": "how often this occurs",
+        "impact": "effect on business metrics",
+        "investigation_needed": "boolean - requires further analysis"
+      }
+    ],
+    "references": {
+      "evidence_index": [
+        {
+          "claim": "string - specific claim made",
+          "evidence_type": "statistical_analysis",
+          "source_reference": "data pattern analysis",
+          "verification_method": "statistical validation",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    }
+  },
+  
+  "forecasts": {
+    "call_volume_forecast": {
+      "next_week_prediction": {
+        "predicted_volume": "number",
+        "confidence_interval": "range (min-max)",
+        "methodology": "forecasting method used",
+        "evidence": {
+          "historical_data": "past patterns used",
+          "seasonal_factors": "trends considered",
+          "accuracy_estimate": "expected prediction accuracy"
+        }
+      },
+      "monthly_projection": {
+        "predicted_volume": "number",
+        "growth_rate": "percentage change expected",
+        "peak_periods": ["predicted busy times"],
+        "staffing_recommendations": "suggested resource allocation"
+      }
+    },
+    "product_demand_forecast": [
+      {
+        "product": "string",
+        "predicted_demand": "number/percentage change",
+        "confidence_level": "high/medium/low",
+        "factors_considered": ["variables affecting prediction"],
+        "business_impact": "implications for operations"
+      }
+    ],
+    "risk_predictions": [
+      {
+        "potential_risk": "string - predicted issue",
+        "probability": "percentage likelihood",
+        "timeline": "when this might occur",
+        "prevention_strategy": "recommended actions",
+        "evidence": {
+          "leading_indicators": "early warning signs",
+          "historical_precedents": "similar past occurrences"
+        }
+      }
+    ],
+    "references": {
+      "calculation_methods": [
+        {
+          "metric_name": "call_volume_forecast",
+          "formula": "time series analysis with seasonal adjustment",
+          "data_inputs": ["historical call volumes", "day of week patterns"],
+          "assumptions": ["similar patterns continue", "no major business changes"]
+        }
+      ]
+    },
+    "metric_explanations": {
+      "confidence_interval": {
+        "definition": "range of expected values",
+        "calculation_method": "statistical confidence bounds",
+        "business_significance": "indicates forecast reliability"
+      }
+    }
+  },
+  
+  "risk_assessment": {
+    "overall_risk_score": "number (0-100)",
+    "critical_risks": [
+      {
+        "risk_type": "string",
+        "severity": "critical/high/medium/low",
+        "indicators": ["string array"],
+        "mitigation_strategy": "string",
+        "timeline": "string"
+      }
+    ],
+    "early_warning_indicators": [
+      {
+        "metric": "string",
+        "current_value": "number",
+        "threshold": "number",
+        "trend": "improving/stable/deteriorating",
+        "alert_level": "green/yellow/red"
+      }
+    ],
+    "customer_churn_signals": [
+      {
+        "signal": "string",
+        "prevalence": "percentage",
+        "intervention_strategy": "string"
+      }
+    ],
+    "references": {
+      "calculation_methods": [
+        {
+          "metric_name": "string",
+          "formula": "exact calculation used",
+          "data_inputs": ["required data fields"],
+          "assumptions": ["any assumptions made"],
+          "validation_query": "SQL or method to verify result"
+        }
+      ],
+      "evidence_index": [
+        {
+          "claim": "string - specific claim made",
+          "evidence_type": "data_point/calculation/transcript_analysis",
+          "source_reference": "where evidence can be found",
+          "verification_method": "how to validate this claim",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    },
+    "metric_explanations": {
+      "overall_risk_score": {
+        "definition": "composite risk assessment",
+        "calculation_method": "weighted average of risk factors",
+        "business_significance": "indicates operational stability"
+      }
+    }
+  },
+  
+  "recommendations": {
+    "immediate_actions": [
+      {
+        "priority": "critical/high/medium/low",
+        "action": "string",
+        "expected_impact": "string",
+        "timeline": "string",
+        "resources_required": "string"
+      }
+    ],
+    "strategic_initiatives": [
+      {
+        "initiative": "string",
+        "business_case": "string",
+        "implementation_plan": "string",
+        "roi_projection": "string"
+      }
+    ],
+    "technology_recommendations": [
+      {
+        "technology": "string",
+        "use_case": "string",
+        "expected_benefit": "string",
+        "implementation_complexity": "low/medium/high"
+      }
+    ],
+    "references": {
+      "evidence_index": [
+        {
+          "claim": "string - specific claim made",
+          "evidence_type": "data_point/calculation/transcript_analysis",
+          "source_reference": "where evidence can be found",
+          "verification_method": "how to validate this claim",
+          "confidence_level": "high/medium/low"
+        }
+      ]
+    }
+  },
+  
+  "visualization_dashboard": {
+    "executive_dashboard": [
+      {
+        "widget_type": "kpi_card/chart/gauge",
+        "title": "string",
+        "metric": "string",
+        "visualization_spec": "detailed_chart_configuration",
+        "refresh_frequency": "real-time/hourly/daily"
+      }
+    ],
+    "operational_dashboard": [
+      {
+        "widget_type": "string",
+        "title": "string", 
+        "purpose": "string",
+        "visualization_spec": "configuration_details"
+      }
+    ],
+    "analytical_reports": [
+      {
+        "report_type": "string",
+        "charts_included": ["chart_specifications"],
+        "target_audience": "executives/managers/agents",
+        "frequency": "daily/weekly/monthly"
+      }
+    ],
+    "references": {
+      "data_sources": [
+        {
+          "source_name": "string - database/table name",
+          "fields_used": ["list of specific columns/fields"],
+          "record_count": "number of records analyzed",
+          "time_range": "data period covered",
+          "quality_notes": "data completeness and reliability"
+        }
+      ]
+    }
+  },
+  
+  "benchmarks_and_targets": {
+    "industry_comparisons": [
+      {
+        "metric": "string",
+        "company_performance": "number",
+        "industry_average": "number",
+        "top_quartile": "number",
+        "performance_gap": "string"
+      }
+    ],
+    "improvement_targets": [
+      {
+        "metric": "string",
+        "current_value": "number",
+        "target_value": "number",
+        "timeline": "string",
+        "feasibility": "high/medium/low"
+      }
+    ],
+    "references": {
+      "data_sources": [
+        {
+          "source_name": "string - database/table name",
+          "fields_used": ["list of specific columns/fields"],
+          "record_count": "number of records analyzed",
+          "time_range": "data period covered",
+          "quality_notes": "data completeness and reliability"
+        }
+      ],
+      "calculation_methods": [
+        {
+          "metric_name": "string",
+          "formula": "exact calculation used",
+          "data_inputs": ["required data fields"],
+          "assumptions": ["any assumptions made"],
+          "validation_query": "SQL or method to verify result"
+        }
+      ]
+    },
+    "metric_explanations": {
+      "industry_comparisons": {
+        "definition": "how company performance compares to industry standards",
+        "calculation_method": "benchmarking against industry data",
+        "business_significance": "identifies competitive position"
+      }
+    }
+  }
+} 

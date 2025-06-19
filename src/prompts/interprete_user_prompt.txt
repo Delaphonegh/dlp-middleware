@@ -1,0 +1,36 @@
+I'm providing you with call center data that needs to be analyzed and interpreted. Please analyze this data comprehensively following these specific guidelines:
+
+{data}
+
+Your analysis must include:
+1. Key performance metrics analysis - Identify critical metrics such as call volume, answer rate, average duration, etc.
+2. Pattern/trend identification - Detect recurring patterns, anomalies, or significant trends in the data
+3. Strengths assessment - Identify areas where the call center is performing well
+4. Improvement areas - Pinpoint specific operational aspects that need enhancement
+5. Actionable recommendations - Provide concrete, implementable suggestions based on the data
+
+Please format your response as a valid, parseable JSON object with the following structure:
+
+{
+  "summary": {
+    "key_metrics_overview": "A concise summary of the most important metrics",
+  },
+  "trends": [
+    {"trend": "Description of identified trend 1", "significance": "Why this trend matters"},
+    {"trend": "Description of identified trend 2", "significance": "Why this trend matters"}
+  ],
+  "strengths": [
+    {"area": "Identified strength area", "evidence": "Data points supporting this conclusion"},
+    {"area": "Identified strength area", "evidence": "Data points supporting this conclusion"}
+  ],
+  "improvement_areas": [
+    {"area": "Area needing improvement", "issue": "Specific issue identified", "impact": "Business impact of this issue"},
+    {"area": "Area needing improvement", "issue": "Specific issue identified", "impact": "Business impact of this issue"}
+  ],
+  "recommendations": [
+    {"recommendation": "Specific action to take", "expected_benefit": "Anticipated improvement", "implementation_difficulty": "LOW/MEDIUM/HIGH"},
+    {"recommendation": "Specific action to take", "expected_benefit": "Anticipated improvement", "implementation_difficulty": "LOW/MEDIUM/HIGH"}
+  ]
+}
+
+DO NOT INCLUDE ANY OTHER TEXT OR EXPLANATIONS IN YOUR RESPONSE - PROVIDE ONLY THE VALID JSON OBJECT.

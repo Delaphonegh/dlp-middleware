@@ -1,0 +1,10 @@
+paramiko==3.4.0
+openai==1.12.0
+pymongo==4.6.1
+python-dotenv==1.0.0
+torch==2.2.0
+numpy==1.26.3
+langfuse==2.7.0
+google-cloud-storage==2.18.0
+google-auth==2.30.0 
+assemblyai==0.40.2

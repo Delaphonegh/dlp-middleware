@@ -1,0 +1,15 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.monitor.txt .
+RUN pip install --no-cache-dir -r requirements.monitor.txt
+
+COPY db_change_monitor.py .
+COPY cdr_change_handler.py .
+
+# Create logs directory
+RUN mkdir -p /app/logs
+
+# Run CDR change handler by default
+CMD ["python", "cdr_change_handler.py"] 

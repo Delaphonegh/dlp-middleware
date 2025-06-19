@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  db-change-monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile.monitor
+    restart: unless-stopped
+    environment:
+      - MYSQL_HOST=${MYSQL_HOST:-197.221.94.195}
+      - MYSQL_PORT=${MYSQL_PORT:-3306}
+      - MYSQL_USER=${MYSQL_USER:-replica_user}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-password}
+      - MYSQL_SCHEMA=${MYSQL_SCHEMA:-asteriskcdrdb}
+      - MYSQL_SERVER_ID=${MYSQL_SERVER_ID:-100}
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      - REDIS_DB=${REDIS_DB:-0}
+    volumes:
+      - ./logs:/app/logs
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+
+volumes:
+  redis-data: 

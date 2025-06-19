@@ -1,0 +1,4 @@
+mysql-replication>=1.0.9
+pymysql>=1.1.0
+redis>=5.0.0
+python-dotenv>=1.0.0 
