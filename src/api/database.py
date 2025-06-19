@@ -10,8 +10,8 @@ from functools import wraps
 from typing import Optional
 
 # OpenTelemetry imports
-from opentelemetry import trace
-from opentelemetry.trace import Status, StatusCode
+from opentelemetry import trace # type: ignore
+from opentelemetry.trace import Status, StatusCode # type: ignore
 
 load_dotenv()
 logger = logging.getLogger(__name__)
