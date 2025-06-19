@@ -5,6 +5,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 import asyncio
 from dotenv import load_dotenv
+
+# OpenTelemetry imports - Must be imported early
+from api.core.telemetry import initialize_telemetry, get_tracer, get_meter
 from api.routes.auth import router as auth_router
 from api.routes.conversations import router as conversations_router
 from api.routes.admin import router as admin_router
@@ -24,11 +27,19 @@ logger = logging.getLogger(__name__)
 # Load environment variables
 load_dotenv()
 
+# Initialize OpenTelemetry BEFORE creating FastAPI app
+# This ensures all auto-instrumentation is set up early
+tracer = get_tracer("dlp-middleware")
+meter = get_meter("dlp-middleware")
+
 app = FastAPI(
     title="Delaphone API",
     description="API for Delaphone application",
     version="0.1.0"
 )
+
+# Initialize telemetry with the FastAPI app
+initialize_telemetry(app)
 
 # CORS configuration
 origins = [
@@ -44,17 +55,39 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Performance monitoring middleware
+# Performance monitoring middleware with OpenTelemetry
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
     start_time = time.time()
+    
+    # Get current span to add custom attributes
+    from opentelemetry import trace
+    current_span = trace.get_current_span()
+    
+    # Add custom attributes to the span
+    if current_span:
+        current_span.set_attribute("http.client_ip", request.client.host if request.client else "unknown")
+        current_span.set_attribute("http.user_agent", request.headers.get("user-agent", "unknown"))
+        current_span.set_attribute("http.request_content_length", request.headers.get("content-length", "0"))
+    
     response = await call_next(request)
+    
     process_time = time.time() - start_time
     response.headers["X-Process-Time"] = str(process_time)
+    
+    # Add response attributes to span
+    if current_span:
+        current_span.set_attribute("http.response_time_ms", process_time * 1000)
+        current_span.set_attribute("http.status_code", response.status_code)
+        current_span.set_attribute("http.response_size", response.headers.get("content-length", "0"))
     
     # Log slow requests (over 1 second)
     if process_time > 1:
         logger.warning(f"Slow request: {request.method} {request.url.path} - {process_time:.4f} seconds")
+        if current_span:
+            current_span.set_attribute("performance.slow_request", True)
+            current_span.add_event("slow_request_detected", {"threshold_seconds": 1.0})
+    
     return response
 
 # Include routers
